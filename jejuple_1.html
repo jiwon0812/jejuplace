@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jejuplace</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/c">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <!--    구글 폰트 Noto Sans KR-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <!--   메인 페이지 슬라이드 처리 js -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    var visual =$("#brandvisual>ul>li");
+    var button =$("#buttonlist>ul>li");
+    var current =0;
+    var timeid;
+
+    button.click(function(){
+      var i =$(this).index();
+      button.removeClass('on');
+      $(this).addClass('on');
+      move(i);
+    });
+    function move(index){
+      if(current == index) return false;
+      
+      var current1 =visual.eq(current);
+      var next1 =visual.eq(index);
+      
+      if(current < index){
+          current1.css({left:0}).stop().animate({left:'-100%'});
+          next1.css({left:'100%'}).stop().animate({left:0});
+      }else{
+          current1.css({left:0}).stop().animate({left:'100%'});
+          next1.css({left:'-100%'}).stop().animate({left:0});
+      }
+                                                
+      current= index;
+    }
+
+    $("#next").click(function(){
+      var i =current+1;
+      if(i>visual.length-1) i=0;
+      
+      button.eq(i).trigger('click');
+    });
+
+    $("#prev").click(function(){
+      var i =current-1;
+      if(i<0) i=visual.length-1;
+      
+      button.eq(i).trigger('click');
+    });
+
+    $("#wrap").on({
+      mouseenter:function(){
+          clearInterval(timeid);
+      },
+
+      mouseleave:function(){
+          timer();
+      }
+    });
+
+    function timer(){
+      timeid =setInterval(function(){
+          var n =current+1;
+          if(n == visual.length){n=0;}
+          button.eq(n).trigger('click')
+      },3000);
+    }
+      
+      
+    <!--모바일 button-->
+
+
+    //    모바일 헤더
+    $("#header .header .nav_btn").click(function(){
+        $("#header .m-nav").stop().fadeIn(1000);
+    });
+    $(".nav-top .nav-close").click(function(){
+        $("#header .m-nav").stop().fadeOut(1000);
+    });  
+
+   <!--모바일 button 끝-->   
+  });
+</script>
+
+<body>
+<div id="wrap">
+<div id="header">
+<!--  PC 헤더   -->
+  <div class="header">
+   <div class="img">
+       <a href="jejuple_1.html"><img src="images/logo.png" alt="logo"></a>
+   </div>
+<div class="nav_btn">
+    <img src="images/gnb_btn2.png" alt="햄버거 버튼">
+</div>
+   <div class="nav">
+       <li><a href="javascript:;">제주플레이스소개</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub4.html">소개</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="javascript:;">객실안내</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub1.html">이용안내</a></li>
+		             <li><a href="jejuple_sub2.html">1.5룸</a></li>
+		             <li><a href="jejuple_sub5.html">원룸 통창형</a></li>
+		             <li><a href="jejuple_sub6.html">원룸 일반창형</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="javascript:;">올드제주카페</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub3.html">카페</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="javascript:;">주변볼거리</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub7.html">여행지</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="javascript:;">이벤트</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub8.html">이벤트</a></li>
+		         </ul>
+		     </li>
+		  </div>     
+    </div>
+    <!--  //PC 헤더   -->
+   <!--    모바일 헤더-->
+    <div class="m-nav">
+        <div class="nav-top">
+           <img src="images/logo.png" alt="로고">
+           <div class="nav-close">
+           <img src="images/close.png" alt="햄버거버튼">
+           </div>
+        </div>
+        <div class="nav-mid">
+            <ul>
+            <li><a href="javascript:;">제주플레이스소개</a>
+		     </li>
+		     <li><a href="javascript:;">객실안내</a>
+		        
+		     </li>
+		     <li><a href="javascript:;">올드제주카페</a>
+		     </li>
+                <li><a href="javascript:;">주변볼거리</a>
+		     </li>
+		     <li><a href="javascript:;">이벤트</a>
+		     </li>
+        </ul>
+        </div>
+    </div>
+    <!--  //모바일 헤더   -->
+
+</div>
+
+<!--              brandvisual_1       -->
+  <div id="brandvisual_1">
+    <div id="brandvisual">
+      <ul>
+        <li class="visual01"></li>
+        <li class="visual02"></li>
+        <li class="visual03"></li>
+      </ul>
+    </div>
+    <div id="buttonlist">
+      <ul>
+        <li class="on"><a href="#">버튼1</a></li>
+        <li><a href="#">버튼2</a></li>
+        <li><a href="#">버튼3</a></li>
+      </ul>
+    </div>
+    <div id="next"><a href="#"><img src="images/next_arrow_img.png" alt=""></a></div>
+    <div id="prev"><a href="#"><img src="images/prev_arrow_img.png" alt=""></a></div>
+  </div>
+
+<!---- End -->
+<!--content1-->
+<div id="content1">
+  <div class="content1">
+  
+   <div class="boder">
+       <h1>Enjoy</h1>
+    <p>제주플레이스에서 우리 힐링할래요?</p>
+   </div>
+    
+       
+    <div class="circle1 circle">
+    <a href="#">
+        <img src="images/full2_img1.png" alt="">
+        <div class="contxt">
+            <p class="contxt_1"> 편안한 <br> 잠자리 </p>
+        </div>
+    </a>
+    </div>
+    
+    <div class="circle2 circle">
+    <a href="#">
+        <img src="images/full2_img2.png" alt="">
+        <div class="contxt">
+            <p class="contxt_1"> 맛있는 <br> 조식제공 </p>
+        </div>
+    </a>
+    </div>
+
+    <div class="circle3 circle">
+    <a href="#">
+        <img src="images/full2_img3.png" alt="">
+        <div class="contxt">
+            <p class="contxt_1"> 리뷰당첨자 <br> 제주감귤 <br>보내드려요~ </p>
+        </div>
+    </a>
+    </div>
+    
+    <div class="circle4 circle">
+    <a href="#">
+        <img src="images/full2_img4.png" alt="">
+        <div class="contxt">
+            <p class="contxt_1"> 야외 <br> 바베큐 </p>
+        </div>
+    </a>
+    </div>
+    
+    
+</div>
+</div>
+<!--              content1 끝-->
+
+
+<!--           swiper   -->
+<!-- 구분용 swiper1 추가 -->
+<div id="swiper">
+<div class="swiper-container swiper1">
+<div class="content4">
+	         <br>
+          <div class="boder3"></div>
+              <h1>Stay</h1>
+                <br>
+               <p class="1">2018년 4월에 오픈한 신축건물입니다.<br>
+               옥상에서 서우봉, 바닷가, 다려도, 한라산 뷰를 만날 수 있습니다.
+               <br> 체크인 16:00~21:00 체크아웃 11:00
+               </p>
+	    </div>
+	<div class="swiper-wrapper">
+		<div class="swiper-slide"><img src="images/content2_img1.png"></div>
+		<div class="swiper-slide"><img src="images/content2_img2.png"></div>
+		<div class="swiper-slide"><img src="images/content2_img3.png"></div>
+	</div>
+
+	<!-- 페이징 -->
+	<div class="swiper-pagination"></div>
+</div>
+<div class="swiper-container swiper3">
+<div class="content4">
+         <div class="boder3"></div>
+               <h1>Cafe</h1>
+                <br>
+               <p>조용한 공간, 제주북촌 카페에서 맛있는 커피와 책과 함께 쉬어가세요!
+               </p>
+               <p>월요일 휴무<br>
+               평 일 11:00~19:00
+               토/일 11:00~21:00
+          </p>
+	    </div>
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+		<img src="images/content2_img4.png"></div>
+		<div class="swiper-slide">
+		<img src="images/content2_img5.png"></div>
+		<div class="swiper-slide">
+		<img src="images/content2_img6.png"></div>
+	</div>
+
+	<!-- 페이징 -->
+	<div class="swiper-pagination"></div>
+</div>
+
+
+<!-- 구분용 swiper2 추가 -->
+<div class="swiper-container swiper2">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+		<img src="images/content2_img4.png"></div>
+		<div class="swiper-slide">
+		<img src="images/content2_img5.png"></div>
+		<div class="swiper-slide">
+		<img src="images/content2_img6.png"></div>
+	</div>
+    <!-- 페이징 -->
+	<div class="swiper-pagination"></div>
+       <div class="content5">
+               <div class="boder4"></div>
+               <h1>Cafe</h1>
+                <br>
+               <p>조용한 공간, 제주북촌 카페에서 맛있는 커피와 책과 함께 쉬어가세요!
+               </p>
+               <p>월요일 휴무<br>
+               평 일 11:00~19:00
+               토/일 11:00~21:00
+          </p>
+	    </div>
+    </div>
+</div>
+
+
+<!--content2 시작-->
+<div id="content2">
+    <div class="content2">
+    <br>
+    <h1>작은정원과 1층 북카페에서 맛있는 커피와 함께 독서와 산책으로 <br>
+    모두가 편히 쉴 수 있는 펜션으로 준비되어 있습니다
+    </h1>
+     <div class="box">
+         <a href="#"><p>Reservation</p></a>
+     </div>   
+     </div>
+ </div>
+<!--   content2 end-->
+
+<!--   content3 시작-->
+   <div id="content3">
+       <div class="content3">
+         <br>
+          <div class="boder2"></div>
+           <h1>Location</h1>
+            <br>
+           <p class="1">제주특별자치도 제주시 일주동로1438 <br> 문의전화 064-781-7952</p>
+           <br>
+           <p class="2">자동차<br>제주공항에서 35분~40분 소요</p>
+           <br>
+            <p class="3">대중교통<br>
+            제주공항에서101(급행), 121, 131
+            <br>
+            함덕해수욕장 정류장 환승1회201,704-4
+            <br>
+            북촌리해동정류장에서 하차 후 <br> 도보로 5분 거리
+            </p>
+            <img src="images/content3.png" alt="지도">
+       </div>
+   </div>
+<!--   content3 끝-->
+   
+<!--   content6 시작-->
+   <div id="content6">
+       <div class="content6">
+           <br>
+          <div class="boder4"></div>
+          <h1>Story</h1>
+                <br>
+                <div class="content3_txt">
+                   <p>
+                   지금, 제주플레이스에서는?
+                   </p>
+               </div>
+            <div class="ikon">
+                <a href="#"><img src="images/facebook.png" alt="페이스북"></a>
+                <a href="#"><img src="images/instar.png" alt="인스타그램"></a>
+            </div>
+       </div>
+   </div>
+<!--   content6 끝-->
+   
+<!--   footer시작-->
+   <div id="footer">
+       <div class="outer">
+         <br>
+          <div class="outer_txt">
+          <h4> 주식회사 제주플레이스 | 제주플레이스 펜션 | 주소 제주 제주시 일주동로 457, 1485 <br> 사업자등록번호. 740-85-011192 | 대표전화. 064-782-1785 | 예약전화. 064-782-1785
+         </h4>
+             <div class="outer_txt1">
+             <h5>&copy; 제주플레이스 All Rights Reserved</h5>
+                <img src="images/logo_footer.png" alt="">
+             </div>
+          </div>
+       </div>   
+     </div>
+     <a id="MOVE_TOP_BTN" href="#">
+     <img src="images/topbutton.png" alt="탑버튼"></a> 
+    </div>
+</body>
+<!--MOVE_TOP_BTN(버튼) 시작-->
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('#MOVE_TOP_BTN').fadeIn();
+            } else {
+                $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+        
+        $("#MOVE_TOP_BTN").click(function() {
+            $('html, body').animate({
+                scrollTop : 0
+            }, 400);
+            return false;
+        });
+    });
+</script>
+<!--MOVE_TOP_BTN(버튼) 끝-->
+
+<!--swiper 시작-->
+<script>
+$(document).ready(function(){
+   // swiper1
+new Swiper('.swiper1', {
+	pagination : { // 페이징 설정
+		el : '.swiper-pagination',
+		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+	},
+	navigation : { // 네비게이션 설정
+		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+	},
+});
+
+// swiper2
+new Swiper('.swiper2', {
+	loop : true, // 무한 루프 슬라이드, 반복이 되며 슬라이드가 끝이 없다.
+	pagination : {
+		el : '.swiper-pagination',
+	},
+}); 
+});
+</script>
+  <!-- Swiper JS -->
+  <script src="js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {delay: 3000},
+        speed: 2000,
+      pagination: {
+        el: '.swiper-pagination',
+          clickable: true,
+      },
+    });
+  </script>
+<!--swiper end-->
+
+</html>

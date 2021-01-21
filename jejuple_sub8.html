@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jejuplace_sub7</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sub6.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+<!--    구글 폰트 Noto Sans KR-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="wrap">
+     <!--  PC 헤더   -->
+  <div id="header">
+    <div class="header">
+   <div class="img">
+       <a href="jejuple_1.html"><img src="images/logo.png" alt=""></a>
+   </div>
+   <div class="nav">
+       <li><a href="#">제주플레이스소개</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub4.html">소개</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="#">객실안내</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub1.html">이용안내</a></li>
+		             <li><a href="jejuple_sub2.html">1.5룸</a></li>
+		             <li><a href="jejuple_sub5.html">원룸 통창형</a></li>
+		             <li><a href="jejuple_sub6.html">원룸 일반창형</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="#">올드제주카페</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub3.html">카페</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="#">주변볼거리</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub7.html">여행지</a></li>
+		         </ul>
+		     </li>
+		     <li><a href="#">이벤트</a>
+		         <ul class="nav_sub">
+		             <li><a href="jejuple_sub8.html">이벤트</a></li>
+		         </ul>
+		     </li>
+        </div>
+        </div> 
+    </div>
+    <!--  //PC 헤더   -->
+<!--    header 끝 -->
+
+<!--   section 시작-->
+   <div id="section">
+      <div class="section1">
+         <h1>이벤트</h1>
+          <div class="box box1">
+              <img src="images/sub8_1.png" alt="이벤트1번째">
+              <div class="txt">
+                  <h2>2021 신년감사이벤트~!</h2>
+                  <p>2021.01.15 ~ 2021.01.31</p>
+              </div>
+          </div>
+          <div class="box box2">
+              <img src="images/sub8_1.png" alt="이벤트1번째">
+              <div class="txt">
+                  <h2>2021 신년감사이벤트~!</h2>
+                  <p>2021.01.15 ~ 2021.01.31</p>
+              </div>
+          </div>
+          <div class="box box3">
+              <img src="images/sub8_1.png" alt="이벤트1번째">
+              <div class="txt">
+                  <h2>2021 신년감사이벤트~!</h2>
+                  <p>2021.01.15 ~ 2021.01.31</p>
+              </div>
+          </div>
+          <div class="box box4">
+              <img src="images/sub8_1.png" alt="이벤트1번째">
+              <div class="txt">
+                  <h2>2021 신년감사이벤트~!</h2>
+                  <p>2021.01.15 ~ 2021.01.31</p>
+              </div>
+          </div>
+          <div class="box box5">
+              <img src="images/sub8_1.png" alt="이벤트1번째">
+              <div class="txt">
+                  <h2>2021 신년감사이벤트~!</h2>
+                  <p>2021.01.15 ~ 2021.01.31</p>
+              </div>
+          </div>
+          <div class="box box6">
+              <img src="images/sub8_1.png" alt="이벤트1번째">
+              <div class="txt">
+                  <h2>2021 신년감사이벤트~!</h2>
+                  <p>2021.01.15 ~ 2021.01.31</p>
+              </div>
+          </div>
+      </div>
+   </div>
+   <!--   section 끝-->
+<!--   section1 시작-->
+  <div id="section1">
+  
+   </div>
+<!--   footer 시작-->
+ <div id="footer">
+       <div class="outer">
+         <br>
+          <div class="outer_txt">
+          <h4> 주식회사 제주플레이스 | 제주플레이스 펜션 | 주소 제주 제주시 일주동로 457, 1485 <br> 사업자등록번호. 740-85-011192 | 대표전화. 064-782-1785 | 예약전화. 064-782-1785
+         </h4>
+             <div class="outer_txt1">
+             <h5>&copy; 제주플레이스 All Rights Reserved</h5>
+                <img src="images/logo.png" alt="">
+             </div>
+          </div>
+       </div>
+     </div>  
+    <a id="MOVE_TOP_BTN" href="#">
+     <img src="images/topbutton.png" alt=""></a> 
+    </div>
+</body>
+<!--MOVE_TOP_BTN(버튼) 시작-->
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('#MOVE_TOP_BTN').fadeIn();
+            } else {
+                $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+        
+        $("#MOVE_TOP_BTN").click(function() {
+            $('html, body').animate({
+                scrollTop : 0
+            }, 400);
+            return false;
+        });
+    });
+</script>
+<!--MOVE_TOP_BTN(버튼) 끝-->
+</html>
