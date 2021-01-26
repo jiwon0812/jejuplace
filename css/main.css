@@ -348,10 +348,10 @@
     line-height: 1.5;
     
 }
-.content3 img{
-    position: absolute;
-    top: 150px; left: 430px;
-}
+ .content3 img{
+        position: absolute; width: 90%;
+        top: 390px; left: 30px;
+    }
 /*content3 끝*/
 
 /*content4 시작*/
