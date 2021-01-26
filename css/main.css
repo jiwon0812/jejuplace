@@ -931,8 +931,8 @@ body{margin: o auto; width: 100%;}
 
     }
     .content3 img{
-        position: absolute;
-        top: 410px; left: 0px;
+        position: absolute; width: 90%;
+        top: 390px; left: 30px;
     }
     /*content3 끝*/
     .content6 .ikon{
